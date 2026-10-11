@@ -1,0 +1,10 @@
+import assert from 'node:assert/strict';
+import { calculateScore, SCORING_RULES } from '../src/game/scoring.js';
+assert.equal(calculateScore({}),0);
+assert.equal(calculateScore({furthestX:800}),100);
+assert.equal(calculateScore({furthestX:800,checkpoints:[1480,1480,2820]}),250);
+assert.equal(calculateScore({furthestX:4280,checkpoints:[1480,2820],completed:true,timeRemaining:30}),1485);
+assert.equal(calculateScore({furthestX:800,completed:false,timeRemaining:60}),100,'remaining time cannot be farmed without finishing');
+assert.equal(calculateScore({furthestX:4280,completed:true,timeRemaining:90}),1635,'time bonus is capped by the 60-second turn');
+assert.equal(SCORING_RULES.pointsPerCheckpoint,75);
+console.log('Scoring checks passed.');

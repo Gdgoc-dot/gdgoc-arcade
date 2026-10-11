@@ -1,0 +1,16 @@
+project_id = "gdgoc-arcade"
+
+[api]
+enabled = true
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 2000
+
+[functions.join-queue]
+verify_jwt = false
+
+[functions.get-participant-state]
+verify_jwt = false
+
+[functions.admin-action]
+verify_jwt = true
