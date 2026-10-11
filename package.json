@@ -1,0 +1,11 @@
+{
+  "name": "gdgoc-ndu-arcade-challenge",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Standalone GDGoC NDU recruitment-day arcade game with mobile controller, queue, leaderboard, and voucher operations.",
+  "scripts": {
+    "serve": "python3 -m http.server 8080",
+    "test": "node tests/static-check.mjs && node tests/scoring.test.mjs"
+  }
+}
